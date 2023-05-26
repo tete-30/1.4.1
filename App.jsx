@@ -48,18 +48,27 @@ function Filme({ nome, diretores }) {
 }
 
 
-function App() {
-  return (
-    <div>
 
-      {filmes.map(filme => (
-      <Filme diretores={filme.diretores} nome={filme.nome} />
-      ))}
 
-    </div>
-  );
+  function FilmeOscar({ nome }) {
+    return (
+      <div>
+        <h2>{nome}</h2>
+      </div>
+    )
+  }
+
+  function App() {
+    return (
+      <div>
+  
+        {filmes.filter(filme => filme.oscar).map(filme => (
+          <FilmeOscar nome={filme.nome} />
+        ))}
+  
+      </div>
+    );
 
 }
 
 export default App
-
